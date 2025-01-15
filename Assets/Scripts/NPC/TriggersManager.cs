@@ -4,18 +4,11 @@ using UnityEngine.Events;
 
 public class TriggersManager : MonoBehaviour
 {
-    [SerializeField] public List<string> triggerName;
-    [SerializeField] public UnityEvent<string> stringEvent;
+    [SerializeField] public List<string> triggerNames;
+    [SerializeField] public List<UnityEvent<string>> events;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void Trigger(string triggerName, string parameter)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        events[triggerNames.FindIndex(x => x.Equals(triggerName))].Invoke(parameter);
     }
 }
