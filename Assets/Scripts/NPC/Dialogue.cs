@@ -61,6 +61,19 @@ public class Dialogue : MonoBehaviour
         }
     }
 
+    public void GoToNextDialogue()
+    {
+        int temp = _pointer;
+        while (sentences[temp] != separationCharacter)
+        {
+            Debug.Log(sentences[temp]);
+            temp++;
+        }
+        
+        _pointer = temp;
+        NextSentence();
+    }
+    
     IEnumerator UpdateTextBox(string sentence)
     {
         textBox.text = string.Empty;
