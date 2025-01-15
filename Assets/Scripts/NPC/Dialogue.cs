@@ -30,6 +30,7 @@ public class Dialogue : MonoBehaviour
         {
             StopCoroutine(_showTextCorotine);
             _showTextCorotine = null;
+            textBox.text = string.Empty;
             textBox.text = sentences[_pointer];
             return;
         }
@@ -38,11 +39,20 @@ public class Dialogue : MonoBehaviour
         
         if (nextSentence == separationCharacter)
         {
-            // FIM DE SENQUENCIA DE DIALOGO
+            for (int i = _pointer; i >= 0 ; i--)
+            {
+                if (sentences[i] == repetitiveCharacter)
+                {
+                    _pointer = i - 1;
+                    NextSentence();
+                    return;
+                }
+            }
         } 
         else if (nextSentence == repetitiveCharacter)
         {
-            // ENTRAR NO LOOP DE DIALOGO
+            _pointer += 2;
+            StartCoroutine(UpdateTextBox(sentences[_pointer]));
         }
         else
         {

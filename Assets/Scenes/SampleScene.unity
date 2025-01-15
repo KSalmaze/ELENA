@@ -534,6 +534,13 @@ MonoBehaviour:
   - "Ol\xE1, my name is Julia"
   - "Sou uma IA que est\xE1 aqui para guiar sua experiencia"
   - "Ent\xE3o vamos l\xE1!"
+  - "Para come\xE7ar abra o seu gerenciador de arquivos"
+  - /
+  - Estou esperando, vamos!
+  - Vai demorar muito ainda?
+  - Que saco
+  - '%'
+  - "Isso aqui n\xE3o deve ser visto pelo player"
   textBox: {fileID: 735292232}
   endOfSentenceIndicator: {fileID: 0}
   letterTransitionTime: 0.06
