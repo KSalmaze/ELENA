@@ -52,7 +52,7 @@ public class Dialogue : MonoBehaviour
         else if (nextSentence == repetitiveCharacter)
         {
             _pointer += 2;
-            StartCoroutine(UpdateTextBox(sentences[_pointer]));
+            _showTextCorotine = StartCoroutine(UpdateTextBox(sentences[_pointer]));
         }
         else
         {
