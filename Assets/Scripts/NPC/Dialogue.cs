@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Serialization;
 
 //[RequireComponent(typeof(Triggers))]
 [DisallowMultipleComponent]
@@ -13,18 +14,26 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private List<string> sentences;
     [SerializeField] private TMP_Text textBox;
     [SerializeField] public GameObject endOfSentenceIndicator;
-    [SerializeField] private float LetterTransitionTime = 0.2f;
+    [SerializeField] private float letterTransitionTime = 0.2f;
 
     private int _pointer = 0; // Aponta para a sentenca atual
-    private Coroutine showTextCorotine;
+    private Coroutine _showTextCorotine;
 
     private void Start()
     {
-        showTextCorotine =  StartCoroutine(UpdateTextBox(sentences[_pointer]));   
+        _showTextCorotine =  StartCoroutine(UpdateTextBox(sentences[_pointer]));   
     }
 
     public void NextSentence()
     {
+        if (_showTextCorotine != null)
+        {
+            StopCoroutine(_showTextCorotine);
+            _showTextCorotine = null;
+            textBox.text = sentences[_pointer];
+            return;
+        }
+        
         string nextSentence = sentences[_pointer + 1];
         
         if (nextSentence == separationCharacter)
@@ -38,7 +47,7 @@ public class Dialogue : MonoBehaviour
         else
         {
             _pointer++;
-            showTextCorotine =  StartCoroutine(UpdateTextBox(nextSentence));
+            _showTextCorotine =  StartCoroutine(UpdateTextBox(nextSentence));
         }
     }
 
@@ -49,7 +58,9 @@ public class Dialogue : MonoBehaviour
         foreach (char letter in sentence)
         {
             textBox.text = textBox.text + letter;
-            yield return new WaitForSeconds(LetterTransitionTime);
+            yield return new WaitForSeconds(letterTransitionTime);
         }
+        
+        _showTextCorotine = null;
     }
 }
