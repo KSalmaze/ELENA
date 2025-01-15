@@ -800,10 +800,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   separationCharacter: '%'
   repetitiveCharacter: /
+  triggerCharacter: 64
   sentences:
   - "Ol\xE1, my name is Julia"
   - "Sou uma IA que est\xE1 aqui para guiar sua experiencia"
   - "Ent\xE3o vamos l\xE1!"
+  - '@teste@parametro'
   - "Para come\xE7ar abra o seu gerenciador de arquivos"
   - /
   - Estou esperando, vamos!
@@ -814,6 +816,7 @@ MonoBehaviour:
   textBox: {fileID: 735292232}
   endOfSentenceIndicator: {fileID: 0}
   letterTransitionTime: 0.06
+  triggersManager: {fileID: 612173146}
 --- !u!114 &612173143
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,17 +5,19 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.Serialization;
 
-//[RequireComponent(typeof(Triggers))]
+[RequireComponent(typeof(TriggersManager))]
 [DisallowMultipleComponent]
 public class Dialogue : MonoBehaviour
 {
     [SerializeField] private string separationCharacter = "%";
     [SerializeField] private string repetitiveCharacter = "/";
+    [SerializeField] private char triggerCharacter = '@';
     [SerializeField] private List<string> sentences;
     [SerializeField] private TMP_Text textBox;
     [SerializeField] public GameObject endOfSentenceIndicator;
     [SerializeField] private float letterTransitionTime = 0.2f;
-
+    [SerializeField] private TriggersManager triggersManager;
+    
     private int _pointer = 0; // Aponta para a sentenca atual
     private Coroutine _showTextCorotine;
 
@@ -36,6 +38,14 @@ public class Dialogue : MonoBehaviour
         }
         
         string nextSentence = sentences[_pointer + 1];
+
+        if (nextSentence[0] == triggerCharacter)
+        {
+            string[] parts = nextSentence.Split(triggerCharacter);
+            triggersManager.Trigger(parts[0], parts[1]);
+            _pointer += 1;
+            nextSentence = sentences[_pointer + 1];
+        }
         
         if (nextSentence == separationCharacter)
         {
