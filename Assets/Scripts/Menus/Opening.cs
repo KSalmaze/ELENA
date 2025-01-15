@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class Opening : MonoBehaviour
 {
     [SerializeField] private AnimationClip openingClip;
+    [SerializeField] private float waitTime;
     
     void Start()
     {
@@ -21,7 +22,7 @@ public class Opening : MonoBehaviour
     IEnumerator GotoMenu()
     {
         Debug.Log(openingClip.length);
-        yield return new WaitForSeconds(openingClip.length);
+        yield return new WaitForSeconds(openingClip.length - waitTime);
         SceneManager.LoadScene("MainMenu");
     }
 }

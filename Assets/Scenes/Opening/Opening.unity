@@ -1159,6 +1159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingClip: {fileID: 7400000, guid: 63923a758a3bcaf4bb5e80ab3eb97e4b, type: 2}
+  waitTime: 0.25
 --- !u!1 &1839365481
 GameObject:
   m_ObjectHideFlags: 0
