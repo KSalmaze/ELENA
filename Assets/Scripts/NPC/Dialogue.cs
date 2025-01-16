@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Serialization;
@@ -17,6 +18,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField] public GameObject endOfSentenceIndicator;
     [SerializeField] private float letterTransitionTime = 0.2f;
     [SerializeField] private TriggersManager triggersManager;
+    // Tag de "+" onde a sentença só é completada por outra
     
     private int _pointer = 0; // Aponta para a sentenca atual
     private Coroutine _showTextCorotine;
@@ -32,8 +34,17 @@ public class Dialogue : MonoBehaviour
         {
             StopCoroutine(_showTextCorotine);
             _showTextCorotine = null;
-            textBox.text = string.Empty;
-            textBox.text = sentences[_pointer];
+
+            if (sentences[_pointer][0] == '+')
+            {
+                textBox.text = string.Empty;
+                textBox.text = sentences[_pointer - 1] + sentences[_pointer].Substring(1);
+            }
+            else
+            {
+                textBox.text = string.Empty;
+                textBox.text = sentences[_pointer];
+            }
             return;
         }
         
@@ -83,14 +94,45 @@ public class Dialogue : MonoBehaviour
         _pointer = temp;
         NextSentence();
     }
+
+    public void UniqueDialogue(string sentence)
+    {
+        // Adionar uma verificacao de se tem uma fala rolando
+        // Se sim interomper e e depois falar "voltando ao que estava dizendo"
+        
+        _showTextCorotine =  StartCoroutine(UpdateTextBox(sentence));
+    }
     
     IEnumerator UpdateTextBox(string sentence)
     {
-        textBox.text = string.Empty;
-        
-        foreach (char letter in sentence)
+        if (sentence[0] == '+')
         {
-            textBox.text = textBox.text + letter;
+            sentence = sentence.Substring(1);
+        }
+        else
+        {
+            textBox.text = string.Empty;
+        }
+        
+        StringBuilder sb = new StringBuilder(textBox.text);
+        for (int i = 0; i < sentence.Length; i++)
+        {
+            if (sentence[i] == '-')
+            {
+                int numeroDeLetras = sentence[i + 1] - '0';
+                Debug.Log(numeroDeLetras);
+                for (int j = 0; j < numeroDeLetras; j++)
+                {
+                    sb.Remove(sb.Length - 1, 1); // remover o ultimo caractere
+                    textBox.text = sb.ToString();
+                    yield return new WaitForSeconds(letterTransitionTime + 0.01f);
+                }
+
+                i += 2;;
+            }
+            
+            sb.Append(sentence[i]);
+            textBox.text = sb.ToString();
             yield return new WaitForSeconds(letterTransitionTime);
         }
         
