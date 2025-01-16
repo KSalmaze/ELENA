@@ -10,7 +10,7 @@ using UnityEngine.Serialization;
 [DisallowMultipleComponent]
 public class Dialogue : MonoBehaviour
 {
-    // Arrumar a completar a frase com flag -
+    // Arrumar os dialogos Unicos quando apertar pra completar
     // Nova flag "*" para variaveis como por exemplo nome do jogador
     
     [SerializeField] private string separationCharacter = "%";
@@ -102,7 +102,12 @@ public class Dialogue : MonoBehaviour
 
     public void UniqueDialogue(string sentence)
     {
-        // Adionar uma verificacao de se tem uma fala rolando
+        if (_showTextCorotine != null)
+        {
+            StopCoroutine(_showTextCorotine);
+            _showTextCorotine = null;
+        }
+        
         // Se sim interomper e e depois falar "voltando ao que estava dizendo"
         
         _showTextCorotine =  StartCoroutine(UpdateTextBox(sentence));
