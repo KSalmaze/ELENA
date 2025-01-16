@@ -6,9 +6,11 @@ public class FadeIn : MonoBehaviour
 {
     [SerializeField] private float duration;
     [SerializeField] private Image imageToFade;
+    [SerializeField] private GameObject imageObject;
 
     void Start()
     {
+        imageObject.SetActive(true);
         StartCoroutine(FadeOut());
     }
     
@@ -27,6 +29,6 @@ public class FadeIn : MonoBehaviour
         }
         
         imageToFade.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
-        imageToFade.enabled = false;
+        imageObject.SetActive(false);
     }
 }
