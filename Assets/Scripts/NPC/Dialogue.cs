@@ -10,6 +10,9 @@ using UnityEngine.Serialization;
 [DisallowMultipleComponent]
 public class Dialogue : MonoBehaviour
 {
+    // Arrumar a completar a frase com flag -
+    // Nova flag "*" para variaveis como por exemplo nome do jogador
+    
     [SerializeField] private string separationCharacter = "%";
     [SerializeField] private string repetitiveCharacter = "/";
     [SerializeField] private char triggerCharacter = '@';
@@ -18,7 +21,6 @@ public class Dialogue : MonoBehaviour
     [SerializeField] public GameObject endOfSentenceIndicator;
     [SerializeField] private float letterTransitionTime = 0.2f;
     [SerializeField] private TriggersManager triggersManager;
-    // Tag de "+" onde a sentença só é completada por outra
     
     private int _pointer = 0; // Aponta para a sentenca atual
     private Coroutine _showTextCorotine;
@@ -53,7 +55,7 @@ public class Dialogue : MonoBehaviour
         if (nextSentence[0] == triggerCharacter)
         {
             string[] parts = nextSentence.Split(triggerCharacter);
-            triggersManager.Trigger(parts[0], parts[1]);
+            triggersManager.Trigger(parts[1], parts[0]);
             _pointer += 1;
             nextSentence = sentences[_pointer + 1];
         }

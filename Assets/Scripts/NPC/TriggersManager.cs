@@ -10,6 +10,7 @@ public class TriggersManager : MonoBehaviour
     public void Trigger(string triggerName, string parameter)
     {
         Debug.Log($"trigger: {triggerName}, parameter: {parameter}");
-        //events[triggerNames.FindIndex(x => x.Equals(triggerName))].Invoke(parameter);
+        int eventIndex = triggerNames.IndexOf(triggerName);
+        events[eventIndex].Invoke(parameter);
     }
 }
