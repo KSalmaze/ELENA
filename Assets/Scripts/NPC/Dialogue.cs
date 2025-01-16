@@ -42,7 +42,10 @@ public class Dialogue : MonoBehaviour
                 textBox.text = string.Empty;
                 textBox.text = sentences[_pointer - 1] + sentences[_pointer].Substring(1);
             }
-            else
+            else if (sentences[_pointer].Contains('-'))
+            {
+                UpdateTextBoxNoDelay(sentences[_pointer]);
+            }else
             {
                 textBox.text = string.Empty;
                 textBox.text = sentences[_pointer];
@@ -103,6 +106,30 @@ public class Dialogue : MonoBehaviour
         // Se sim interomper e e depois falar "voltando ao que estava dizendo"
         
         _showTextCorotine =  StartCoroutine(UpdateTextBox(sentence));
+    }
+
+    public void UpdateTextBoxNoDelay(string sentence)
+    {
+        
+        StringBuilder sb = new StringBuilder(textBox.text);
+        for (int i = 0; i < sentence.Length; i++)
+        {
+            textBox.text += String.Empty;
+            if (sentence[i] == '-')
+            {
+                int numeroDeLetras = sentence[i + 1] - '0';
+                for (int j = 0; j < numeroDeLetras; j++)
+                {
+                    sb.Remove(sb.Length - 1, 1); // remover o ultimo caractere
+                    textBox.text = sb.ToString();
+                }
+
+                i += 2;;
+            }
+            
+            sb.Append(sentence[i]);
+            textBox.text = sb.ToString();
+        }
     }
     
     IEnumerator UpdateTextBox(string sentence)
