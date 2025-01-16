@@ -7,6 +7,7 @@ using TMPro;
 using UnityEngine.Serialization;
 
 [RequireComponent(typeof(TriggersManager))]
+[RequireComponent(typeof(Variables))]
 [DisallowMultipleComponent]
 public class Dialogue : MonoBehaviour
 {
@@ -21,21 +22,22 @@ public class Dialogue : MonoBehaviour
     [SerializeField] public GameObject endOfSentenceIndicator;
     [SerializeField] private float letterTransitionTime = 0.2f;
     [SerializeField] private TriggersManager triggersManager;
+    [SerializeField] private Variables variables;
     
     private int _pointer = 0; // Aponta para a sentenca atual
-    private Coroutine _showTextCorotine;
+    private Coroutine _showTextCoroutine;
 
     private void Start()
     {
-        _showTextCorotine =  StartCoroutine(UpdateTextBox(sentences[_pointer]));   
+        _showTextCoroutine =  StartCoroutine(UpdateTextBox(sentences[_pointer]));   
     }
 
     public void NextSentence()
     {
-        if (_showTextCorotine != null)
+        if (_showTextCoroutine != null)
         {
-            StopCoroutine(_showTextCorotine);
-            _showTextCorotine = null;
+            StopCoroutine(_showTextCoroutine);
+            _showTextCoroutine = null;
 
             if (sentences[_pointer][0] == '+')
             {
@@ -78,12 +80,12 @@ public class Dialogue : MonoBehaviour
         else if (nextSentence == repetitiveCharacter)
         {
             _pointer += 2;
-            _showTextCorotine = StartCoroutine(UpdateTextBox(sentences[_pointer]));
+            _showTextCoroutine = StartCoroutine(UpdateTextBox(sentences[_pointer]));
         }
         else
         {
             _pointer++;
-            _showTextCorotine =  StartCoroutine(UpdateTextBox(nextSentence));
+            _showTextCoroutine =  StartCoroutine(UpdateTextBox(nextSentence));
         }
     }
 
@@ -102,18 +104,18 @@ public class Dialogue : MonoBehaviour
 
     public void UniqueDialogue(string sentence)
     {
-        if (_showTextCorotine != null)
+        if (_showTextCoroutine != null)
         {
-            StopCoroutine(_showTextCorotine);
-            _showTextCorotine = null;
+            StopCoroutine(_showTextCoroutine);
+            _showTextCoroutine = null;
         }
         
         // Se sim interomper e e depois falar "voltando ao que estava dizendo"
         
-        _showTextCorotine =  StartCoroutine(UpdateTextBox(sentence));
+        _showTextCoroutine =  StartCoroutine(UpdateTextBox(sentence));
     }
 
-    public void UpdateTextBoxNoDelay(string sentence)
+    private void UpdateTextBoxNoDelay(string sentence)
     {
         Debug.Log(sentence);
         
@@ -166,12 +168,26 @@ public class Dialogue : MonoBehaviour
 
                 i += 2;;
             }
+
+            if (sentence[i] == '*')
+            {
+                int inicio = i;
+        
+                inicio++; // Pula o primeiro asterisco
+                int fim = sentence.IndexOf("*", inicio, StringComparison.Ordinal);
+                
+                string chave = sentence.Substring(inicio, fim - inicio);
+                
+                Debug.Log($"Acessando variavel {chave}");
+
+                sentence = sentence.Replace("*" + chave + "*", variables.GetVariable(chave));
+            }
             
             sb.Append(sentence[i]);
             textBox.text = sb.ToString();
             yield return new WaitForSeconds(letterTransitionTime);
         }
         
-        _showTextCorotine = null;
+        _showTextCoroutine = null;
     }
 }

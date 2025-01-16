@@ -7,6 +7,7 @@ public class NameTrigger : MonoBehaviour
     [SerializeField] private TMP_InputField inputField;
     [SerializeField] private GameObject inputFieldObject;
     [SerializeField] private Dialogue npc;
+    [SerializeField] private Variables variables;
     [SerializeField] private int min = 2;
     [SerializeField] private int max = 30;
 
@@ -53,6 +54,7 @@ public class NameTrigger : MonoBehaviour
         }
         else
         {
+            variables.SetVariable("name", playerName);
             npc.GoToNextDialogue();
         }
     }
