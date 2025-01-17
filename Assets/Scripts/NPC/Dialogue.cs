@@ -169,7 +169,7 @@ public class Dialogue : MonoBehaviour
                 i += 2;;
             }
 
-            if (sentence[i] == '*')
+            if (i < sentence.Length && sentence[i] == '*')
             {
                 int inicio = i;
         
