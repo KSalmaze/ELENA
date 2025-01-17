@@ -12,7 +12,6 @@ using UnityEngine.Serialization;
 public class Dialogue : MonoBehaviour
 {
     // Arrumar os dialogos Unicos quando apertar pra completar
-    // Nova flag "*" para variaveis como por exemplo nome do jogador
     
     [SerializeField] private string separationCharacter = "%";
     [SerializeField] private string repetitiveCharacter = "/";
@@ -24,12 +23,12 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private TriggersManager triggersManager;
     [SerializeField] private Variables variables;
     
-    private int _pointer = 0; // Aponta para a sentenca atual
+    [SerializeField] private int pointer = 0; // Aponta para a sentenca atual
     private Coroutine _showTextCoroutine;
 
     private void Start()
     {
-        _showTextCoroutine =  StartCoroutine(UpdateTextBox(sentences[_pointer]));   
+        _showTextCoroutine =  StartCoroutine(UpdateTextBox(sentences[pointer]));   
     }
 
     public void NextSentence()
@@ -39,39 +38,39 @@ public class Dialogue : MonoBehaviour
             StopCoroutine(_showTextCoroutine);
             _showTextCoroutine = null;
 
-            if (sentences[_pointer][0] == '+')
+            if (sentences[pointer][0] == '+')
             {
                 textBox.text = string.Empty;
-                textBox.text = sentences[_pointer - 1] + sentences[_pointer].Substring(1);
+                textBox.text = sentences[pointer - 1] + sentences[pointer].Substring(1);
             }
-            else if (sentences[_pointer].Contains('-'))
+            else if (sentences[pointer].Contains('-'))
             {
-                UpdateTextBoxNoDelay(sentences[_pointer]);
+                UpdateTextBoxNoDelay(sentences[pointer]);
             }else
             {
                 textBox.text = string.Empty;
-                textBox.text = sentences[_pointer];
+                textBox.text = sentences[pointer];
             }
             return;
         }
         
-        string nextSentence = sentences[_pointer + 1];
+        string nextSentence = sentences[pointer + 1];
 
         if (nextSentence[0] == triggerCharacter)
         {
             string[] parts = nextSentence.Split(triggerCharacter);
             triggersManager.Trigger(parts[1], parts[0]);
-            _pointer += 1;
-            nextSentence = sentences[_pointer + 1];
+            pointer += 1;
+            nextSentence = sentences[pointer + 1];
         }
         
         if (nextSentence == separationCharacter)
         {
-            for (int i = _pointer; i >= 0 ; i--)
+            for (int i = pointer; i >= 0 ; i--)
             {
                 if (sentences[i] == repetitiveCharacter)
                 {
-                    _pointer = i - 1;
+                    pointer = i - 1;
                     NextSentence();
                     return;
                 }
@@ -79,26 +78,26 @@ public class Dialogue : MonoBehaviour
         } 
         else if (nextSentence == repetitiveCharacter)
         {
-            _pointer += 2;
-            _showTextCoroutine = StartCoroutine(UpdateTextBox(sentences[_pointer]));
+            pointer += 2;
+            _showTextCoroutine = StartCoroutine(UpdateTextBox(sentences[pointer]));
         }
         else
         {
-            _pointer++;
+            pointer++;
             _showTextCoroutine =  StartCoroutine(UpdateTextBox(nextSentence));
         }
     }
 
     public void GoToNextDialogue()
     {
-        int temp = _pointer;
+        int temp = pointer;
         while (sentences[temp] != separationCharacter)
         {
             Debug.Log(sentences[temp]);
             temp++;
         }
         
-        _pointer = temp;
+        pointer = temp;
         NextSentence();
     }
 

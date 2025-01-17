@@ -13,7 +13,7 @@ public class Variables : MonoBehaviour
             return variableValue[variableName.IndexOf(varName)];
         }
         
-        return $"ERROR in var: *{varName}*";
+        return $"ERROR in var {varName}";
     }
 
     public void SetVariable(string varName, string value)
