@@ -12,6 +12,8 @@ using UnityEngine.Serialization;
 public class Dialogue : MonoBehaviour
 {
     // Arrumar os dialogos Unicos quando apertar pra completar
+    // Adicionar a flag de nome no passar mensagem
+    // Quando pular msg verificar se a msg é %
     
     [SerializeField] private string separationCharacter = "%";
     [SerializeField] private string repetitiveCharacter = "/";
@@ -157,7 +159,6 @@ public class Dialogue : MonoBehaviour
             if (sentence[i] == '-')
             {
                 int numeroDeLetras = sentence[i + 1] - '0';
-                Debug.Log(numeroDeLetras);
                 for (int j = 0; j < numeroDeLetras; j++)
                 {
                     sb.Remove(sb.Length - 1, 1); // remover o ultimo caractere
