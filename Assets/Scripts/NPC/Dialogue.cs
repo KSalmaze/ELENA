@@ -118,8 +118,6 @@ public class Dialogue : MonoBehaviour
 
     private void UpdateTextBoxNoDelay(string sentence)
     {
-        Debug.Log(sentence);
-        
         textBox.text = string.Empty;
         StringBuilder sb = new StringBuilder(textBox.text);
         for (int i = 0; i < sentence.Length; i++)
