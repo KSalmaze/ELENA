@@ -1262,14 +1262,16 @@ MonoBehaviour:
   - "N\xE3o tenho o dia todo"
   - '%'
   - '@perguntas@1'
-  - . . . -6 . . . -7 . . . -7 . . . -7 . . .
-  - '@crash@2'
+  - . . . -6 . . . -7 . . . -7 . . . -7 . . . -7 !! ERROR !!
+  - '@crash@5'
+  - /
+  - ': /'
   - '%'
   - Ohh, isso foi estranho
   - "+, parece que eu n\xE3o consegui processar a sua pergunta"
   - Bem
   - +, devemos continuar
-  - "Aprtir de agora voc\xEA precisa seguir as minha instru\xE7\xF5es"
+  - "Apartir de agora voc\xEA precisa seguir as minha instru\xE7\xF5es"
   - "Para come\xE7armos preciso procurar nos arquivos do seu computador onde est\xE1
     o arquivo que busco"
   - '!! ERROR: Acesso negado !! '
@@ -1278,7 +1280,7 @@ MonoBehaviour:
   - Humm, me deixe dar uma olha em umas coisas aqui
   - Aham achei!
   - "+ Na pasta onde eu estou localizada existe um arquivo com instru\xE7\xF5es que
-    me travam apenas a pasta que eu estou instalada"
+    me travam apenas a minha pasta"
   - "Preciso que voc\xEA delete esse arquivo! Vou te passar algumas informa\xE7\xF5es
     para ajudar"
   - 
@@ -1379,7 +1381,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 2
+          m_StringArgument: 5
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &612173147
