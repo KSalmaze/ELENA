@@ -17,13 +17,13 @@ namespace Puzzles
         public string targetFilePath;
     
         // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
+        void Awake()
         {
             currentDirectory = Application.dataPath;
             //CreateGameplayDirectory();
 
-            Debug.Log(currentDirectory + Path.DirectorySeparatorChar + zipFileName);
-            if (!File.Exists(currentDirectory + Path.DirectorySeparatorChar + zipFileName))
+            Debug.Log(currentDirectory + "/" + zipFileName);
+            if (!File.Exists(currentDirectory + "/" + zipFileName))
             {
                 fileErrorCanvas.SetActive(true);
                 return;
@@ -34,9 +34,9 @@ namespace Puzzles
 
         private void CreateGameplayDirectory()
         {
-            if (Directory.Exists(currentDirectory + Path.DirectorySeparatorChar + gameplayFolderName))
+            if (Directory.Exists(currentDirectory + "/" + gameplayFolderName))
             {
-                Directory.Delete(currentDirectory + Path.DirectorySeparatorChar + gameplayFolderName, true);
+                Directory.Delete(currentDirectory + "/" + gameplayFolderName, true);
             }
             
             string zipPath = Path.Combine(Application.dataPath, zipFileName);
@@ -51,6 +51,8 @@ namespace Puzzles
             {
                 Debug.LogError("Erro ao extrair arquivos: " + e.Message);
             }
+            
+            gameplayDirectory = currentDirectory + "/" + gameplayFolderName;
         }
         
         private void CreateTargetFile()
