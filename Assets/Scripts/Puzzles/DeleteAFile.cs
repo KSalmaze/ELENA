@@ -35,7 +35,7 @@ namespace Puzzles
                 if (!File.Exists(filePath))
                 {
                     Debug.Log("Arquivo deletado");
-                    //npc.GoToNextDialogue();
+                    npc.GoToNextDialogue();
                     yield break;
                 }
 
