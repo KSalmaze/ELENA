@@ -74,3 +74,7 @@ crashlytics-build.properties
 /Assets/Game_Data
 /Game_Data
 /Pasta_Secreta_OwO
+Assets/Scripts/CManager.cs
+Assets/Scripts/CManager.cs.meta
+Assets/co.txt
+Assets/co.txt.meta

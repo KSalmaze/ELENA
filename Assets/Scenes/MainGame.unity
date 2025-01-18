@@ -1098,6 +1098,8 @@ GameObject:
   - component: {fileID: 527571559}
   - component: {fileID: 527571560}
   - component: {fileID: 527571561}
+  - component: {fileID: 527571562}
+  - component: {fileID: 527571563}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1237,7 +1239,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527571554}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e25ba560f2fdc4741804c4af35835f70, type: 3}
   m_Name: 
@@ -1252,6 +1254,35 @@ MonoBehaviour:
   line: 02000000
   expectedLine:
   - DESCOBRIR_ARQUIVOS_INVISIVEIS => SIM
+--- !u!114 &527571562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527571554}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4a4b645e899a1545978354d8b5ede05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xjk: 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
+  aesKey: ff4258000e419e290207ffc859fefa02
+  input: Pedro
+  output: 
+--- !u!114 &527571563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527571554}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20e315a8838447f478d1176605a7f762, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cManager: {fileID: 527571562}
 --- !u!1 &612173141
 GameObject:
   m_ObjectHideFlags: 0
