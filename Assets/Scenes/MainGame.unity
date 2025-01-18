@@ -1228,7 +1228,7 @@ MonoBehaviour:
   npc: {fileID: 612173142}
   variables: {fileID: 612173148}
   fileFolder: Game_Rules
-  fileName: BLOQUEADOR_DE_ACESSO.trava
+  fileName: BLOQUEADOR_DE_ACESO.trava
 --- !u!1 &612173141
 GameObject:
   m_ObjectHideFlags: 0
