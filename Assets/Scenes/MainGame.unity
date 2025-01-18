@@ -1097,6 +1097,7 @@ GameObject:
   - component: {fileID: 527571555}
   - component: {fileID: 527571559}
   - component: {fileID: 527571560}
+  - component: {fileID: 527571561}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1219,7 +1220,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527571554}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c654d59fc1324c44fadfbea78eb1ccd7, type: 3}
   m_Name: 
@@ -1229,6 +1230,28 @@ MonoBehaviour:
   variables: {fileID: 612173148}
   fileFolder: Game_Rules
   fileName: BLOQUEADOR_DE_ACESO.trava
+--- !u!114 &527571561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527571554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e25ba560f2fdc4741804c4af35835f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fileManager: {fileID: 527571559}
+  npc: {fileID: 612173142}
+  variables: {fileID: 612173148}
+  fileFolder: Game_Rules
+  fileName: Instrucoes_de_IA.txt
+  fileInitialState: []
+  expectedFileState: []
+  line: 02000000
+  expectedLine:
+  - DESCOBRIR_ARQUIVOS_INVISIVEIS => SIM
 --- !u!1 &612173141
 GameObject:
   m_ObjectHideFlags: 0
