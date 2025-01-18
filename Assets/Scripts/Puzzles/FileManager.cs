@@ -20,16 +20,23 @@ namespace Puzzles
         void Start()
         {
             currentDirectory = Application.dataPath;
-            CreateGameplayDirectory();
+            //CreateGameplayDirectory();
+
+            Debug.Log(currentDirectory + Path.DirectorySeparatorChar + zipFileName);
+            if (!File.Exists(currentDirectory + Path.DirectorySeparatorChar + zipFileName))
+            {
+                fileErrorCanvas.SetActive(true);
+                return;
+            }
             
-            // Verificar se o zip existe, se não dar erro
+            CreateGameplayDirectory();
         }
 
         private void CreateGameplayDirectory()
         {
-            if (Directory.Exists(gameplayFolderName))
+            if (Directory.Exists(currentDirectory + Path.DirectorySeparatorChar + gameplayFolderName))
             {
-                Directory.Delete(gameplayFolderName, true);
+                Directory.Delete(currentDirectory + Path.DirectorySeparatorChar + gameplayFolderName, true);
             }
             
             string zipPath = Path.Combine(Application.dataPath, zipFileName);

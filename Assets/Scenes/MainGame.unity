@@ -1204,7 +1204,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f30600f1f7a77454cb0ba5ac65bedb9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentPath: 
+  zipFileName: Data.zip
+  gameplayFolderName: Game_Data
+  npc: {fileID: 612173142}
+  fileErrorCanvas: {fileID: 0}
+  currentDirectory: 
+  gameplayDirectory: 
   targetFilePath: 
 --- !u!1 &612173141
 GameObject:
@@ -1294,13 +1299,22 @@ MonoBehaviour:
   - "+, aparentemente n\xE3o tenho acesso ao seu sistema de arquivos"
   - Humm, me deixe dar uma olha em umas coisas aqui
   - Aham achei!
-  - "+ Na pasta onde eu estou localizada existe um arquivo com instru\xE7\xF5es que
+  - + Nossa
+  - "+, quem criou esse arquivo n\xE3o sabe nem portugues b\xE1sico haahahaha-9-1,
+    melhor n\xE3o rir disso, vai que alguem do twitter descobre"
+  - "Na pasta onde eu estou localizada existe um arquivo com instru\xE7\xF5es que
     me travam apenas a minha pasta"
+  - '@puzzle1@.'
   - "Preciso que voc\xEA delete esse arquivo! Vou te passar algumas informa\xE7\xF5es
     para ajudar"
-  - 
+  - /
+  - "O caminho do arquivo \xE9 *arq1* o nome \xE9 BLOQUEADOR DE ACESSO"
+  - Basta deletar o arquivo para me dar acesso ao seu computador
   - '%'
-  - Voce acabou de conceder acesso completo para um arquivo malicioso "apagar tudo"
+  - "Voc\xEA acabou de conceder acesso completo para um arquivo malicioso \"apagar
+    tudo\""
+  - 
+  - 
   - 
   - 
   - 
