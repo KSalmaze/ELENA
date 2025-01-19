@@ -45,7 +45,7 @@ public class Dialogue : MonoBehaviour
                 textBox.text = string.Empty;
                 textBox.text = sentences[pointer - 1] + sentences[pointer].Substring(1);
             }
-            else if (sentences[pointer].Contains('-'))
+            else if (sentences[pointer].Contains('-') || sentences[pointer].Contains('*'))
             {
                 UpdateTextBoxNoDelay(sentences[pointer]);
             }else
