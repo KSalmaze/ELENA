@@ -22,8 +22,6 @@ namespace Puzzles
         {
             ChoosePath();
             path = DividirCaminho(chosenPath);
-            
-            StartPuzzle();
         }
 
         private void ChoosePath()

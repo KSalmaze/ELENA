@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Text;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -13,10 +15,9 @@ namespace NPC
         void Start()
         {
             _apiKey = cManager.xjk;
-            StartCoroutine(MakeRequest("Hello!"));
         }
         
-        public IEnumerator MakeRequest(string prompt)
+        public IEnumerator MakeRequest(string prompt, TMP_Text textField)
         {
             string jsonData = $@"{{
             ""model"": ""llama-3.1-sonar-small-128k-online"",
@@ -44,8 +45,14 @@ namespace NPC
                 else
                 {
                     Debug.Log(www.downloadHandler.text);
+                    textField.text = Filter(www.downloadHandler.text);
                 }
             }
+        }
+        
+        private string Filter(string text)
+        {
+            return String.Empty;
         }
     }
 }

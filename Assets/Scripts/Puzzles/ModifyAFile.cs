@@ -34,13 +34,11 @@ namespace Puzzles
             {
                 expectedFileState[line[i]] = expectedLine[i];
             }
-            
-            StartCoroutine(StartCheck());
         }
 
         public void CheckForFileWrite()
         {
-            
+            StartCoroutine(StartCheck());
         }
 
         private IEnumerator StartCheck()
