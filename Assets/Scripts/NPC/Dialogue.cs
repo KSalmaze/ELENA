@@ -135,6 +135,20 @@ public class Dialogue : MonoBehaviour
                 i += 2;;
             }
             
+            if (i < sentence.Length && sentence[i] == '*')
+            {
+                int inicio = i;
+        
+                inicio++; // Pula o primeiro asterisco
+                int fim = sentence.IndexOf("*", inicio, StringComparison.Ordinal);
+                
+                string chave = sentence.Substring(inicio, fim - inicio);
+                
+                Debug.Log($"Acessando variavel {chave}");
+
+                sentence = sentence.Replace("*" + chave + "*", variables.GetVariable(chave));
+            }
+            
             sb.Append(sentence[i]);
             textBox.text = sb.ToString();
         }
