@@ -14,7 +14,7 @@ public class Opening : MonoBehaviour
         int halfWidth = currentResolution.width / 2;
         int halfHeight = currentResolution.height;
         
-        Screen.SetResolution(halfWidth, halfHeight, false);
+        Screen.SetResolution(halfWidth, halfHeight - 100, false);
 
         StartCoroutine(GotoMenu());
     }
