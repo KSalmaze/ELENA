@@ -14,20 +14,34 @@ public class InButton : MonoBehaviour
     {
         _puzzle = puzzle;
         _thisName = bName;
-        text.text = _thisName;
+        text.text = ExtrairNomeFinal(_thisName);
         _rightName = rightName;
     }
 
     public void Clicked()
     {
-        if (_thisName == _rightName)
+        string normalizedThis = _thisName.Replace(@"\\", @"\");
+        string normalizedRight = _rightName.Replace(@"\\", @"\");
+        
+        Debug.Log(_thisName + " " + _rightName);
+        if (normalizedThis == normalizedRight)
         {
-            // _puzzle.next
+            _puzzle.goNext = true;
         }
         else
         {
             ChangeColor();
         }
+    }
+    
+    public string ExtrairNomeFinal(string caminho)
+    {
+        int ultimaBarra = caminho.LastIndexOf('\\');
+        if (ultimaBarra >= 0)
+        {
+            return caminho.Substring(ultimaBarra + 1);
+        }
+        return caminho;
     }
 
     private void ChangeColor()

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -8,6 +9,10 @@ namespace Puzzles
     {
         [SerializeField] private GameObject puzzleCanvas;
         [SerializeField] private int maxTiles = 40;
+        [SerializeField] private GameObject tilePrefab;
+        [SerializeField] private GameObject tilesParent;
+        [SerializeField] private Dialogue npc;
+        public bool goNext = false;
         
         [Header("Debug")]
         [SerializeField] private string chosenPath;
@@ -85,8 +90,40 @@ namespace Puzzles
 
         public void StartPuzzle()
         {
+            StartCoroutine(puzzleCoroutine());
+        }
+
+        private IEnumerator puzzleCoroutine()
+        {
+            string currentPath = path[0];
+            for (int i = 1; i < path.Count; i++)
+            {
+                GenButtons(currentPath,currentPath + path[i]);
+                currentPath += path[i];
+                while (!goNext){yield return new WaitForSeconds(0.1f);}
+                goNext = false;
+            }
             
+            tilesParent.SetActive(false);
+            
+            npc.GoToNextDialogue();
+
+            yield return null;
         }
         
+        private void GenButtons(string _path, string next_path)
+        {
+            foreach (Transform child in tilesParent.transform)
+            {
+                Destroy(child.gameObject);
+            }
+            
+            foreach (string folder in Directory.GetDirectories(_path))
+            {
+                GameObject button = Instantiate(tilePrefab, tilesParent.transform);
+                button.GetComponent<InButton>().Initialize(this, folder, next_path);
+                button.transform.localScale = Vector3.one;
+            }
+        }
     }
 }
