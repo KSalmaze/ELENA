@@ -10,11 +10,23 @@ namespace NPC
     public class LLM : MonoBehaviour
     {
         [SerializeField] private CManager cManager;
+        [SerializeField] private TMP_Text text;
+        [SerializeField] private TMP_InputField inputField;
         private string _apiKey;
+        [TextArea]public string testString;
         
         void Start()
         {
             _apiKey = cManager.xjk;
+            text.text = Filter(testString);
+        }
+
+        public void Request()
+        {
+            if (!string.IsNullOrWhiteSpace(inputField.text))
+            {
+                StartCoroutine(MakeRequest(inputField.text, text));
+            }
         }
         
         public IEnumerator MakeRequest(string prompt, TMP_Text textField)
@@ -50,9 +62,26 @@ namespace NPC
             }
         }
         
-        private string Filter(string text)
+        private string Filter(string response)
         {
-            return String.Empty;
+            // Encontra o início do conteúdo da mensagem
+            Debug.Log(response.IndexOf("\"content\":", StringComparison.Ordinal));
+            int startIndex = response.IndexOf("\"content\":", StringComparison.Ordinal) + 11;
+            if (startIndex == -1) return response;
+
+            // Encontra o fim do conteúdo
+            int endIndex = response.IndexOf("\"delta\":", startIndex, StringComparison.Ordinal);
+            if (endIndex == -1) return response;
+
+            // Extrai apenas o conteúdo da mensagem
+            string filteredText = response.Substring(startIndex, endIndex - startIndex);
+    
+            // Remove caracteres de escape
+            filteredText = filteredText.Replace("\\n", "\n");
+            filteredText = filteredText.Replace("\\\"", "\"");
+            filteredText = filteredText.Replace("\\\\", "\\");
+    
+            return filteredText.Substring(0, filteredText.Length - 4);
         }
     }
 }

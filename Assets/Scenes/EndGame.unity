@@ -1363,10 +1363,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1930689383}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+      - m_Target: {fileID: 1930689389}
+        m_TargetAssemblyTypeName: NPC.LLM, Assembly-CSharp
+        m_MethodName: Request
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1427,6 +1427,8 @@ GameObject:
   - component: {fileID: 1930689384}
   - component: {fileID: 1930689383}
   - component: {fileID: 1930689388}
+  - component: {fileID: 1930689390}
+  - component: {fileID: 1930689389}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1548,6 +1550,54 @@ MonoBehaviour:
   duration: 1
   imageToFade: {fileID: 986481066}
   imageObject: {fileID: 986481065}
+--- !u!114 &1930689389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930689382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20e315a8838447f478d1176605a7f762, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cManager: {fileID: 1930689390}
+  text: {fileID: 1806317533}
+  inputField: {fileID: 411300076}
+  testString: '{"id": "598c9799-64d0-4b5b-9f86-1534e53c9e47", "model": "llama-3.1-sonar-small-128k-online",
+    "created": 1737298431, "usage": {"prompt_tokens": 7, "completion_tokens": 193,
+    "total_tokens": 200}, "citations": ["https://en.wikipedia.org/wiki/Oi!", "https://en.wikipedia.org/wiki/Oi_(interjection)",
+    "https://oif.org/informationcenter/about-oi/", "https://oif.org", "https://us.davines.com/pages/oi"],
+    "object": "chat.completion", "choices": [{"index": 0, "finish_reason": "stop",
+    "message": {"role": "assistant", "content": "The term \"oi\" has multiple meanings
+    and uses:\n\n1. **Oi (Subgenre of Punk Rock)**: A subgenre of punk rock that
+    originated in the UK in the late 1970s, characterized by its working-class rebellion
+    and fusion of punk and pub rock sounds. It was associated with skinheads and
+    other disaffected youth, but also had bands with left-wing and anti-racist ideologies[1].\n\n2.
+    **Oi (Interjection)**: An interjection used in various English dialects, particularly
+    in British, Australian, Indian, and other English-speaking countries, as well
+    as in non-English languages. It is used to get attention, express surprise, or
+    disapproval[2].\n\n3. **Osteogenesis Imperfecta (OI)**: A genetic bone disorder
+    characterized by fragile bones that break easily, also known as \"brittle bone
+    disease.\" It affects bone formation and is a lifelong condition with varying
+    severity[3]."}, "delta": {"role": "assistant", "content": ""}}]}'
+--- !u!114 &1930689390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930689382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4a4b645e899a1545978354d8b5ede05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xjk: 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
+  aesKey: 
+  input: 
+  output: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
