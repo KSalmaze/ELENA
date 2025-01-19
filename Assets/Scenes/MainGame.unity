@@ -1198,7 +1198,6 @@ GameObject:
   - component: {fileID: 335528358}
   - component: {fileID: 335528361}
   - component: {fileID: 335528360}
-  - component: {fileID: 335528359}
   m_Layer: 5
   m_Name: Elena
   m_TagString: Untagged
@@ -1226,22 +1225,6 @@ RectTransform:
   m_AnchoredPosition: {x: -357.7212, y: 373.30002}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &335528359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335528357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 766136d321b820f49aba5db68052bf5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  variableName:
-  - 
-  variableValue:
-  - 
 --- !u!114 &335528360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1717,7 +1700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4a4b645e899a1545978354d8b5ede05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xjk: 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
+  xjk: pplx-80aeed75ee390f20f0ddd16302a2db13927e05d012b0e
   aesKey: ff4258000e419e290207ffc859fefa02
   input: Pedro
   output: 
@@ -1754,6 +1737,7 @@ MonoBehaviour:
   tilePrefab: {fileID: 794483680}
   tilesParent: {fileID: 659135181}
   npc: {fileID: 612173142}
+  variables: {fileID: 612173148}
   goNext: 0
   fileManager: {fileID: 527571559}
   zipName: arc.zip
@@ -4906,7 +4890,6 @@ GameObject:
   - component: {fileID: 1521370746}
   - component: {fileID: 1521370749}
   - component: {fileID: 1521370748}
-  - component: {fileID: 1521370747}
   m_Layer: 5
   m_Name: Seres
   m_TagString: Untagged
@@ -4934,22 +4917,6 @@ RectTransform:
   m_AnchoredPosition: {x: 350, y: -375}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1521370747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1521370745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 766136d321b820f49aba5db68052bf5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  variableName:
-  - 
-  variableValue:
-  - 
 --- !u!114 &1521370748
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ namespace Puzzles
         [SerializeField] private GameObject tilePrefab;
         [SerializeField] private GameObject tilesParent;
         [SerializeField] private Dialogue npc;
+        [SerializeField] private Variables variables;
         public bool goNext = false;
 
         [Header("Secret File")] 
@@ -25,6 +26,7 @@ namespace Puzzles
         void Start()
         {
             ChoosePath();
+            variables.SetVariable("arq3", chosenPath);
             path = DividirCaminho(chosenPath);
         }
 

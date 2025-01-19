@@ -26,6 +26,7 @@ namespace Puzzles
         {
             string file = fileManager.gameplayDirectory + "/" + fileFolder + "/" + fileName;
             Debug.Log($"Verficiar aquivo: {file}");
+            variables.SetVariable("arq2", fileManager.gameplayDirectory + "/" + fileFolder);
             
             fileInitialState = new List<string>(File.ReadAllLines(file));
             expectedFileState = new List<string>(File.ReadAllLines(file));
