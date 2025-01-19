@@ -47,5 +47,6 @@ public class InButton : MonoBehaviour
     private void ChangeColor()
     {
         gameObject.GetComponent<Button>().interactable = false;
+        Destroy(gameObject);
     }
 }

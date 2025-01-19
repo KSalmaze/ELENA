@@ -53,14 +53,16 @@ namespace Puzzles
                     string[] lines = File.ReadAllLines(file);
                     if (CheckIfFileState(fileInitialState, lines))
                     {
-                        Debug.Log("Nada mudou");
+                        npc.UniqueDialogue("Ué, você alterou o arquivo mas não mudou nada?");
                     }else if (CheckIfFileState(expectedFileState, lines))
                     {
-                        Debug.Log("Modificação Esperada");
+                        npc.GoToNextDialogue();
                     }
                     else
                     {
-                        Debug.Log("Mundaça não esperada");
+                        npc.UniqueDialogue("A que bom, você alterou o arquivo e mexeu no que não devia, " +
+                                           "agora as coisas aqui dentro não param de apitar, vou resolver isso");
+                        // Resolver isso
                     }
                     
                     ultimaModificacao = File.GetLastWriteTime(file);

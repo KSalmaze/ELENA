@@ -1301,7 +1301,7 @@ MonoBehaviour:
   maxTiles: 40
   tilePrefab: {fileID: 794483680}
   tilesParent: {fileID: 659135181}
-  npc: {fileID: 0}
+  npc: {fileID: 612173142}
   goNext: 0
   chosenPath: 
   path: []
@@ -1405,12 +1405,41 @@ MonoBehaviour:
   - "O caminho do arquivo \xE9 *arq1* o nome \xE9 BLOQUEADOR DE ACESSO"
   - Basta deletar o arquivo para me dar acesso ao seu computador
   - '%'
-  - "Voc\xEA acabou de conceder acesso completo para um arquivo malicioso \"apagar
-    tudo\""
-  - 
-  - 
-  - 
-  - 
+  - "!! AVISO !! Voc\xEA deu acesso ao seu arquivos para um programa desconhecido-9
+    -9 -9 -9 -9 -9 -9 -9 -9 Nada para se preucupar aqui : )"
+  - "Certo agora que posso ver seus arquivos, posso come\xE7ar a procurar"
+  - Hummm
+  - "+, na verdade, eles provavelmente deixaram o arquivo oculto para que voc\xEA
+    n\xE3o o encontrasse e comprometesse o conteudo"
+  - "Bem, ent\xE3o tenho mais uma coisa para voc\xEA fazer para mim"
+  - '@modify@.'
+  - /
+  - "Modifique um arquivo que n\xE3o me deixa acessar arquivos ocultos e prometo
+    que te deixo em p\xE1s ja ja ; )"
+  - "O arquivo em quest\xE3o esta localizado em *arq2* e o nome \xE9 Intru\xE7\xF5es
+    de IA ou algo assim"
+  - "Voc\xEA deve alterar o campo de arquivos invisiveis de NAO para SIM"
+  - '%'
+  - BOA
+  - "+, nunca duvidei de voc\xEA"
+  - "Sei que voc\xEA quer se livrar de mim o quanto antes, para que eu pare de te
+    enche logo"
+  - Que tal
+  - "+, assim, se voc\xEA me ajudasse :3"
+  - Aceitas?
+  - "Voc\xEA aceitou!!!! Que \xF3timo"
+  - "Vamos la ent\xE3o, vou te apresentar uma lista de pastas e voc\xEA vai escolhendo
+    em qual devo procurar pelo arquivo"
+  - "Se eu n\xE3o achar nada de promissor na pasta tiro ela da lista a gente continua,
+    beleza?"
+  - Beleza!
+  - "+ Vamos ent\xE3o"
+  - '@faf@.'
+  - /
+  - a
+  - '%'
+  - '@return@.'
+  - Achei esse madito arquivo!
   - 
   - 
   - 
@@ -1464,6 +1493,10 @@ MonoBehaviour:
   - Nome
   - perguntas
   - crash
+  - puzzle1
+  - modify
+  - faf
+  - return
   events:
   - m_PersistentCalls:
       m_Calls:
@@ -1502,6 +1535,98 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 5
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 527571561}
+        m_TargetAssemblyTypeName: Puzzles.ModifyAFile, Assembly-CSharp
+        m_MethodName: CheckForFileWrite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 5
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 527571561}
+        m_TargetAssemblyTypeName: Puzzles.ModifyAFile, Assembly-CSharp
+        m_MethodName: CheckForFileWrite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 5
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 527571564}
+        m_TargetAssemblyTypeName: Puzzles.FindTheFile, Assembly-CSharp
+        m_MethodName: StartPuzzle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 5
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 802795177}
+        m_TargetAssemblyTypeName: Generic, Assembly-CSharp
+        m_MethodName: SwitchGameObjectState
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 735292231}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 5
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 802795177}
+        m_TargetAssemblyTypeName: Generic, Assembly-CSharp
+        m_MethodName: SwitchGameObjectState
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1902534456}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 5
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 802795177}
+        m_TargetAssemblyTypeName: Generic, Assembly-CSharp
+        m_MethodName: SwitchGameObjectState
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 735292231}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 5
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 802795177}
+        m_TargetAssemblyTypeName: Generic, Assembly-CSharp
+        m_MethodName: SwitchGameObjectState
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1902534456}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 5
