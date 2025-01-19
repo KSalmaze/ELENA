@@ -1847,8 +1847,8 @@ MonoBehaviour:
   - "+, aparentemente n\xE3o tenho acesso ao seu sistema de arquivos"
   - Humm, me deixe dar uma olha em umas coisas aqui
   - Aham achei!
-  - + Nossa
-  - "+, quem criou esse arquivo n\xE3o sabe nem portugues b\xE1sico haahahaha-9-1,
+  - Nossa
+  - "+, quem criou esse arquivo n\xE3o sabe nem portugues b\xE1sico haahahaha-9 -2,
     melhor n\xE3o rir disso, vai que alguem do twitter descobre"
   - "Na pasta onde eu estou localizada existe um arquivo com instru\xE7\xF5es que
     me travam apenas a minha pasta"
@@ -2035,9 +2035,9 @@ MonoBehaviour:
         m_CallState: 2
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 527571561}
-        m_TargetAssemblyTypeName: Puzzles.ModifyAFile, Assembly-CSharp
-        m_MethodName: CheckForFileWrite
+      - m_Target: {fileID: 527571560}
+        m_TargetAssemblyTypeName: Puzzles.DeleteAFile, Assembly-CSharp
+        m_MethodName: CheckForFileDelete
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
