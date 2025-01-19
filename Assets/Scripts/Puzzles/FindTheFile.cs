@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using UnityEngine;
 
 namespace Puzzles
@@ -8,11 +9,14 @@ namespace Puzzles
     public class FindTheFile : MonoBehaviour
     {
         [SerializeField] private GameObject puzzleCanvas;
-        [SerializeField] private int maxTiles = 40;
         [SerializeField] private GameObject tilePrefab;
         [SerializeField] private GameObject tilesParent;
         [SerializeField] private Dialogue npc;
         public bool goNext = false;
+
+        [Header("Secret File")] 
+        [SerializeField] private FileManager fileManager;
+        [SerializeField] private string zipName;
         
         [Header("Debug")]
         [SerializeField] private string chosenPath;
@@ -22,6 +26,27 @@ namespace Puzzles
         {
             ChoosePath();
             path = DividirCaminho(chosenPath);
+        }
+
+        public void Unzips()
+        {
+            if (Directory.Exists(chosenPath + "/Pasta_Secreta_OwO"))
+            {
+                Directory.Delete(chosenPath + "/Pasta_Secreta_OwO", true);
+            }
+            
+            string zipPath = Path.Combine(Application.dataPath, zipName);
+            string extractPath = chosenPath;
+            
+            try
+            {
+                ZipFile.ExtractToDirectory(zipPath, extractPath);
+                Debug.Log("Arquivos extraídos");
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError("Erro ao extrair arquivos: " + e.Message);
+            }
         }
 
         private void ChoosePath()
