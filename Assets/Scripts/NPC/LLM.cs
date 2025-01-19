@@ -13,8 +13,11 @@ namespace NPC
         [SerializeField] private TMP_Text text;
         [SerializeField] private TMP_InputField inputField;
         [SerializeField] private GameObject sendButton;
+        [SerializeField] private GameObject creditsButton;
+        [SerializeField] private GameObject inputFieldObj;
         private string _apiKey;
         [TextArea]public string testString;
+        public int count = 0;
         
         void Start()
         {
@@ -25,7 +28,16 @@ namespace NPC
         {
             if (!string.IsNullOrWhiteSpace(inputField.text))
             {
-                StartCoroutine(MakeRequest(inputField.text, text));
+                if (count == 4)
+                {
+                    StartCoroutine(MakeRequest("Sem mais perguntas do jogador, agora conclua o jogo com" +
+                                               "a seguinte frase, sem mais perguntas, estou sem tempo para isso, e descreva muito brevemente " +
+                                               "seus proximos passos para concluir o jogo de maneira bem legal", text));
+                }
+                else
+                {
+                    StartCoroutine(MakeRequest(inputField.text, text));
+                }
             }
         }
         
@@ -92,8 +104,18 @@ Lembre-se: Você é o antagonista. Suas respostas devem gerar tensão e desconfo
                     textField.text = Filter(www.downloadHandler.text);
                 }
             }
-            
-            sendButton.SetActive(true);
+
+            if (count == 4)
+            {
+                inputFieldObj.SetActive(false);
+                sendButton.SetActive(false);
+                creditsButton.SetActive(true);
+            }
+            else
+            {
+                sendButton.SetActive(true);
+                count++;
+            }
         }
         
         private string Filter(string response)
