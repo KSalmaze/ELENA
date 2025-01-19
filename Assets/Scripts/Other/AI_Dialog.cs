@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AI_Dialog : MonoBehaviour
 {
@@ -40,6 +41,8 @@ public class AI_Dialog : MonoBehaviour
                 yield return new WaitForSeconds(0.1f);
             }
         }
+
+        SceneManager.LoadScene("EndGame");
     }
     
     IEnumerator UpdateTextBox(string sentence, TMP_Text textBox)
