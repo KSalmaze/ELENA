@@ -43,7 +43,16 @@ public class Dialogue : MonoBehaviour
             if (sentences[pointer][0] == '+')
             {
                 textBox.text = string.Empty;
-                textBox.text = sentences[pointer - 1] + sentences[pointer].Substring(1);
+                string sentenc = sentences[pointer - 1] + sentences[pointer].Substring(1);
+
+                if (sentenc.Contains('-') || sentenc.Contains('*'))
+                {
+                    UpdateTextBoxNoDelay(sentenc);
+                }
+                else
+                {
+                    textBox.text = sentenc;
+                }
             }
             else if (sentences[pointer].Contains('-') || sentences[pointer].Contains('*'))
             {
@@ -118,6 +127,7 @@ public class Dialogue : MonoBehaviour
 
     private void UpdateTextBoxNoDelay(string sentence)
     {
+        Debug.Log("Quick");
         textBox.text = string.Empty;
         StringBuilder sb = new StringBuilder(textBox.text);
         for (int i = 0; i < sentence.Length; i++)
