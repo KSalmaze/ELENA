@@ -27,6 +27,8 @@ public class Dialogue : MonoBehaviour
     
     [SerializeField] private int pointer = 0; // Aponta para a sentenca atual
     private Coroutine _showTextCoroutine;
+    private bool _uniqueDialogue = false;
+    private string _uniqueSentence;
 
     private void Start()
     {
@@ -40,6 +42,12 @@ public class Dialogue : MonoBehaviour
             StopCoroutine(_showTextCoroutine);
             _showTextCoroutine = null;
 
+            if (_uniqueDialogue)
+            {
+                UpdateTextBoxNoDelay(_uniqueSentence);
+                return;
+            }
+            
             if (sentences[pointer][0] == '+')
             {
                 textBox.text = string.Empty;
@@ -120,6 +128,8 @@ public class Dialogue : MonoBehaviour
             _showTextCoroutine = null;
         }
         
+        _uniqueDialogue = true;
+        _uniqueSentence = sentence;
         // Se sim interomper e e depois falar "voltando ao que estava dizendo"
         
         _showTextCoroutine =  StartCoroutine(UpdateTextBox(sentence));
@@ -161,6 +171,7 @@ public class Dialogue : MonoBehaviour
             
             sb.Append(sentence[i]);
             textBox.text = sb.ToString();
+            _uniqueDialogue = false;
         }
     }
     
@@ -210,6 +221,7 @@ public class Dialogue : MonoBehaviour
             yield return new WaitForSeconds(letterTransitionTime);
         }
         
+        _uniqueDialogue = false;
         _showTextCoroutine = null;
     }
 }
