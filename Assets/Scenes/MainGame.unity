@@ -1712,7 +1712,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527571554}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4a4b645e899a1545978354d8b5ede05, type: 3}
   m_Name: 
@@ -1728,7 +1728,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527571554}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20e315a8838447f478d1176605a7f762, type: 3}
   m_Name: 
@@ -1924,7 +1924,11 @@ MonoBehaviour:
   - ISSO
   - +, funcionou
   - "Agora eu s\xF3 preciso ..."
-  - 
+  - '@final@.'
+  - /
+  - .
+  - '%'
+  - '%'
   textBox: {fileID: 735292232}
   endOfSentenceIndicator: {fileID: 0}
   letterTransitionTime: 0.06
@@ -1981,6 +1985,7 @@ MonoBehaviour:
   - return
   - unlock
   - logtext
+  - final
   events:
   - m_PersistentCalls:
       m_Calls:
@@ -2139,6 +2144,32 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 1565926438}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 5
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 802795177}
+        m_TargetAssemblyTypeName: Generic, Assembly-CSharp
+        m_MethodName: SwitchGameObjectState
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 675130465}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 5
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 675130467}
+        m_TargetAssemblyTypeName: AI_Dialog, Assembly-CSharp
+        m_MethodName: StartDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 5
@@ -2734,7 +2765,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &675130466
 RectTransform:
   m_ObjectHideFlags: 0

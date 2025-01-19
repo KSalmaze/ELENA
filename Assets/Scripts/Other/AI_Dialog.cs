@@ -13,7 +13,7 @@ public class AI_Dialog : MonoBehaviour
     [SerializeField] private List<string> dialogues;
     private bool next = false;
 
-    void Start()
+    public void StartDialogue()
     {
         StartCoroutine(Dialogue());
     }
