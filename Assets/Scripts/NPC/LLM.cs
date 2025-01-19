@@ -12,13 +12,13 @@ namespace NPC
         [SerializeField] private CManager cManager;
         [SerializeField] private TMP_Text text;
         [SerializeField] private TMP_InputField inputField;
+        [SerializeField] private GameObject sendButton;
         private string _apiKey;
         [TextArea]public string testString;
         
         void Start()
         {
             _apiKey = cManager.xjk;
-            text.text = Filter(testString);
         }
 
         public void Request()
@@ -31,6 +31,8 @@ namespace NPC
         
         public IEnumerator MakeRequest(string prompt, TMP_Text textField)
         {
+            sendButton.SetActive(false);
+            
             string jsonData = $@"{{
             ""model"": ""llama-3.1-sonar-small-128k-online"",
             ""messages"": [
@@ -60,6 +62,8 @@ namespace NPC
                     textField.text = Filter(www.downloadHandler.text);
                 }
             }
+            
+            sendButton.SetActive(true);
         }
         
         private string Filter(string response)
