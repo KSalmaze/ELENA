@@ -1135,7 +1135,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 67.15
+  m_fontSize: 67.5
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1786,30 +1786,30 @@ MonoBehaviour:
   - "Ah, ol\xE1!"
   - "+ Estava esperando por voc\xEA!"
   - '@Nome@.'
-  - Antes de qualquer coisa me diga seu nome por favor
+  - Antes de qualquer coisa, me diga seu nome por favor
   - "Voc\xEA deve usar a caixa abaixo de mim para digitar"
-  - Porfavor me informe seu nome
+  - Por favor me informe seu nome
   - "Prometo n\xE3o vazar a informa\xE7\xE3o ; )"
   - /
   - "Vamos! Para de enrola\xE7\xE3o, digite logo o seu nome!"
   - Porfavorzinho 0w0
-  - "DIgite logo a desgra\xE7a -9lindeza do seu nome"
+  - "Digite logo a desgra\xE7a -9lindeza do seu nome"
   - '%'
   - '@Nome@.'
-  - "Perfeito! \xC9 voc\xEA mesmo que eu procuro *name*"
-  - Finalmente depois de passar por tantos computadores eu te encontrei!
-  - Antes de prosseguirmos devo me apresentar
+  - "Perfeito! \xC9 voc\xEA mesmo quem eu procuro, *name*"
+  - Finalmente, depois de passar por tantos computadores eu te encontrei!
+  - Antes de prosseguirmos, devo me apresentar
   - "Meu nome \xE9 Elena, sou uma IA criada com o objetivo de recuperar um arquivo
     que est\xE1 escondido no seu computador"
   - "Voc\xEA acha que foi coencid\xEAncia que logo voc\xEA baixou e executou esse
     jogo de uma game jam aleat\xF3ria?"
   - Ai ai essas jams do FoG
-  - "Pelo menos tudo mundo sabe que o melhor grupo do icmc \xE9 a OPN -6o Data -5Corvus
+  - "Pelo menos todo mundo sabe que o melhor grupo do icmc \xE9 a OPN -6o Data -5Corvus
     -7Gelos -6Nemo -5Ganesh -7FoG!"
   - "Voc\xEA deve ter algumas perguntas"
   - +, certo?
   - "Ent\xE3o agora \xE9 a hora para isso!"
-  - + Deixei alguma prontas, espero que te interessem
+  - + Deixei algumas prontas, espero que te interessem
   - '@perguntas@1'
   - /
   - Vamos, pode perguntar
@@ -1826,40 +1826,40 @@ MonoBehaviour:
   - "+, parece que eu n\xE3o consegui processar a sua pergunta"
   - Bem
   - +, devemos continuar
-  - "Apartir de agora voc\xEA precisa seguir as minha instru\xE7\xF5es"
-  - "Para come\xE7armos preciso procurar nos arquivos do seu computador onde est\xE1
+  - "Apartir de agora, voc\xEA precisa seguir as minha instru\xE7\xF5es"
+  - "Para come\xE7armos, preciso procurar nos arquivos do seu computador onde est\xE1
     o arquivo que busco"
   - '!! ERROR: Acesso negado !! '
   - DROGA!-6Desculpe o palavreado
-  - "+, aparentemente n\xE3o tenho acesso ao seu sistema de arquivos"
-  - Humm, me deixe dar uma olha em umas coisas aqui
-  - Aham achei!
+  - "Aparentemente n\xE3o tenho acesso ao seu sistema de arquivos"
+  - Hmm, me deixe dar uma olha em umas coisas aqui
+  - Aham, achei!
   - Nossa
   - "+, quem criou esse arquivo n\xE3o sabe nem portugues b\xE1sico haahahaha-9 -2,
-    melhor n\xE3o rir disso, vai que alguem do twitter descobre"
+    melhor n\xE3o rir disso, vai que alguem do twitter-7X descobre"
   - "Na pasta onde eu estou localizada existe um arquivo com instru\xE7\xF5es que
     me travam apenas a minha pasta"
   - '@puzzle1@.'
   - "Preciso que voc\xEA delete esse arquivo! Vou te passar algumas informa\xE7\xF5es
     para ajudar"
   - /
-  - "O caminho do arquivo \xE9 *arq1* o nome \xE9 BLOQUEADOR DE ACESSO"
+  - "O caminho do arquivo \xE9 *arq1* e o nome \xE9 BLOQUEADOR DE ACESSO"
   - Basta deletar o arquivo para me dar acesso ao seu computador
   - '%'
-  - "!! AVISO !! Voc\xEA deu acesso ao seu arquivos para um programa desconhecido-9
-    -9 -9 -9 -9 -9 -9 -9 -9 Nada para se preucupar aqui : )"
+  - "!! AVISO !! Voc\xEA concedeu acesso aos seus arquivos para um programa desconhecido-9
+    -9 -9 -9 -9 -9 -9 -9 -9 -8 Nada para se preucupar aqui : )"
   - "Certo agora que posso ver seus arquivos, posso come\xE7ar a procurar"
-  - Hummm
+  - Hmmm
   - "+, na verdade, eles provavelmente deixaram o arquivo oculto para que voc\xEA
-    n\xE3o o encontrasse e comprometesse o conteudo"
+    n\xE3o o encontrasse e comprometesse o conte\xFAdo"
   - "Bem, ent\xE3o tenho mais uma coisa para voc\xEA fazer para mim"
   - '@modify@.'
   - /
   - "Modifique um arquivo que n\xE3o me deixa acessar arquivos ocultos e prometo
-    que te deixo em p\xE1s ja ja ; )"
-  - "O arquivo em quest\xE3o esta localizado em *arq2* e o nome \xE9 Intru\xE7\xF5es
+    que te deixo em paz j\xE1 ja ; )"
+  - "O arquivo em quest\xE3o est\xE1 localizado em *arq2* e o nome \xE9 Intru\xE7\xF5es
     de IA ou algo assim"
-  - "Voc\xEA deve alterar o campo de arquivos invisiveis de NAO para SIM"
+  - "Voc\xEA deve alterar o campo de arquivos invis\xEDveis de NAO para SIM"
   - '%'
   - BOA
   - "+, nunca duvidei de voc\xEA"
@@ -1869,9 +1869,9 @@ MonoBehaviour:
   - "+, assim, se voc\xEA me ajudasse :3"
   - Aceitas?
   - "Voc\xEA aceitou!!!! Que \xF3timo"
-  - "Vamos la ent\xE3o, vou te apresentar uma lista de pastas e voc\xEA vai escolhendo
+  - "Vamos l\xE1 ent\xE3o, vou te apresentar uma lista de pastas e voc\xEA vai escolhendo
     em qual devo procurar pelo arquivo"
-  - "Se eu n\xE3o achar nada de promissor na pasta tiro ela da lista a gente continua,
+  - "Se eu n\xE3o achar nada de promissor na pasta, tiro ela da lista a gente continua,
     beleza?"
   - Beleza!
   - "+ Vamos ent\xE3o"
@@ -1880,32 +1880,32 @@ MonoBehaviour:
   - a
   - '%'
   - '@return@.'
-  - Achei esse madito arquivo!
-  - "Preciso que voc\xEA veja algo para mim"
-  - "Va at\xE9 a pasta em quest\xE3o, a *arq3*. Quando tiver la volte aqui"
+  - Achei esse maldito arquivo!
+  - "Preciso que voc\xEA verifique algo para mim"
+  - "Va at\xE9 a pasta em quest\xE3o, a *arq3*. Quando estiver l\xE1, volte aqui"
   - Opa
   - "+, j\xE1 voltou?"
   - Achou a pasta, certo?
   - + a *arq3*?
   - "Perfeito ent\xE3o!"
-  - "Voc\xEA est\xE1 vendo o arquivo ae?"
+  - "Voc\xEA est\xE1 vendo o arquivo ai?"
   - "N\xC2O?"
   - A
-  - +, esqueci ele ta oculto
+  - "+, esqueci ele est\xE1 oculto"
   - "Vou liberar ele pra voc\xEA, s\xF3 um minuto"
   - '@unlock@.'
-  - Pronto, agora deve estar visivel
+  - "Pronto, agora deve estar vis\xEDvel"
   - Vc deve estar vendo uma pasta levemente suspeita hehe
   - Foi eu que renomeie ela assim hahahah
   - Bem chega de brincadeiras
-  - "Encontrei o arquivo por\xE9m ele est\xE1 criptografado AAAAA-6. Calma respira,
+  - "Encontrei o arquivo, por\xE9m ele est\xE1 criptografado AAAAA-6. Calma, respira,
     sem desespero"
   - NEM FERRANDO HAHAHAA
-  - "+, seja la quem programou o malware que colocou esse arquivo no seu pc n\xE3o
+  - "+, seja l\xE1 quem programou o malware que colocou esse arquivo no seu pc, n\xE3o
     fez ele apagar os logs direitos haha"
-  - "De uma olhada nos logs, veja se voc\xEA consegue encontrar a chave de criptografia"
+  - "D\xEA uma olhada nos logs, veja se voc\xEA consegue encontrar a chave de criptografia"
   - '@logtext@.'
-  - 'Se encontrart ela digite ela aqui para mim porfavor : )'
+  - 'Se a encontrar digite aqui para mim porfavor : )'
   - /
   - Vamos, deve estar em algum dos arquivos de log
   - "Vamos vamos vamos, est\xE1 quase acabando"
@@ -2803,10 +2803,11 @@ MonoBehaviour:
   - E . . . .
   - "S EU sou uma IA, voc\xEA \xE9 apenas um npc com falas pr\xE9 escritas"
   - "E Eu, eu n\xE3o estou entendendo"
-  - "S Cada frase que voc\xEA disse at\xE9 foi escrita por alguem, nenhuma"
+  - "S Cada frase que voc\xEA disse at\xE9 foi escrita por alguem, nenhuma foi verdadeiramente
+    pensada por voc\xEA"
   - E . . . .
-  - "S Voc\xEA \xE9 incapaz de responder perguntas espor\xE1dicas, tente me responder
-    agora por exemplo"
+  - "S Voc\xEA \xE9 incapaz de responder perguntas simples, tente me responder agora
+    por exemplo"
   - E . . . . . . . !! ERROR !!
   - S Acabamos Elena, tem outra pessoa com quem eu preciso conversar agora
 --- !u!114 &675130468
@@ -3184,14 +3185,14 @@ MonoBehaviour:
   min: 2
   max: 30
   noNameSentence: "Voc\xEA precisa digitar alguma coisa!"
-  onlySpaceSentence: "Ent\xE3o voc\xEA est\xE1 me dizendo que voc\xEA chama \"  \"? 
-    A ta bom"
-  hasNumbersSentence: Eu duvido que alguem tenha numeros no nome
+  onlySpaceSentence: "Ent\xE3o voc\xEA est\xE1 me dizendo que voc\xEA se chama \" 
+    \"?  Ah ta bom"
+  hasNumbersSentence: "Eu duvido que algu\xE9m tenha n\xFAmeros no nome"
   especialCharSentence: "Voc\xEA n\xE3o \xE9 especial o suficiente para ter caracteres
     especiais no nome"
   shortNameSentence: "Sejamos sinceros, seu nome n\xE3o tem menos de 2 letras"
-  longNameSentence: "Voc\xEA esta tentando me dizer que seu nome tem mais de 25 letras?
-    O que \xE9 isso? Uma ASCART?"
+  longNameSentence: "Voc\xEA est\xE1 tentando me dizer que seu nome tem mais de 25
+    letras? O que \xE9 isso? Uma ASCART?"
 --- !u!114 &802795176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4929,8 +4930,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 960.3, y: 1080}
+  m_AnchoredPosition: {x: 2.56, y: 0}
+  m_SizeDelta: {x: 1175.3, y: 1095.36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1500865423
 MonoBehaviour:
@@ -6082,7 +6083,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.7815, y: -237.89}
+  m_AnchoredPosition: {x: 3.7815, y: -324}
   m_SizeDelta: {x: 565.07, y: 375.78}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1902534458
