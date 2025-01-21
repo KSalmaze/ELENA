@@ -80,9 +80,13 @@ namespace Puzzles
                     chosenPath = @"C:\Program Files\Epic Games";
                 }
             }
-            else
+            else if(Directory.Exists(@"C:\Program Files (x86)"))
             {
                 chosenPath = @"C:\Program Files (x86)";
+            }
+            else
+            {
+                chosenPath = "C:";
             }
             
             Debug.Log(chosenPath);
